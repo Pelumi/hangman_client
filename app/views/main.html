@@ -1,0 +1,40 @@
+<div ng-controller="MainCtrl">
+
+
+  <div ng-show="status == 'initial'">
+    <input type="number" ng-model="gameId" id="game-id" ng-keyup="$event.keyCode == 13 ? loadGame(gameId) : null"
+           placeholder="Enter The game Id to load">
+    <button ng-click="loadGame(gameId)">Load Game</button>
+    <p></p><p></p>    <p></p><p></p>
+    <button ng-click="startGame()">Start New game</button>
+  </div>
+
+  <div ng-show="status == 'play'">
+    <h1>{{ answer }}</h1>
+
+    <h2>Failed guess ({{ failedGuess.length }}) = {{ failedGuess}}</h2>
+
+    <h2>Failed guess allowance {{ failedGuess.length }} of 8</h2>
+
+    <h2>Game ID: {{ game.id }} . To quit and continue a game later, note the game id.</h2>
+    <h2>Game State: {{ game.status }} </h2>
+    <h2>Game Started on {{ game.startTime | date:'medium' }} </h2>
+
+    <input type="text" ng-model="charGuess" id="char-guess" ng-keyup="$event.keyCode == 13 ? guess(charGuess) : null"
+           placeholder="Enter your character guess...">
+    <button ng-click="guess(charGuess)">Enter</button>
+  </div>
+
+  <div ng-show="status == 'won'">
+    <h1>Aweseome, you Win! :). To play again, refresh the page!</h1>
+
+    <h2>The words is '{{ answer }}'</h2>
+
+  </div>
+
+  <div ng-show="status == 'lost'">
+    <h1>Sorry mate, you lost! :p</h1>
+
+    <h2>The secret word is '{{ answer }}'. To try again, refresh the page!</h2>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<p>This is the management for all games in the system.</p>
+
+<div ng-controller="ManagementCtrl">
+  <p> Click <a ng-click="loadAllGames()">here</a> to load all games data.</p>
+  <table style="width:100%"  ng-show="status == 'show'">
+    <tr>
+      <th>Game Id</th>
+      <th>Status</th>
+      <th>Failed Guesses</th>
+      <th>Correct Guesses</th>
+      <th>Game Start Timestamp</th>
+    </tr>
+    <tr ng-repeat="game in games_data">
+      <td>{{game.id}}</td>
+      <td>{{game.status}}</td>
+      <td>{{game.failedGuesses}}</td>
+      <td>{{game.rightGuesses}}</td>
+      <td>{{game.startTime  | date:'medium'}}</td>
+    </tr>
+  </table>
+</div>
