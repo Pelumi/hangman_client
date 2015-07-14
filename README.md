@@ -8,6 +8,10 @@ This project skeleton was generated with [yo angular generator](https://github.c
 
 ## Build & development
 
+Ensure grunt, bower are installed: npm install -g grunt-cli bower
+
+If you have wiredep issues, run: bower install
+
 Run `grunt` for building and `grunt serve` for preview.
 
 ## Testing

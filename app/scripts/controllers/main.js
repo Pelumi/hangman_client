@@ -77,9 +77,7 @@ angular.module('clientApp')
           var ch = item.guess;
           var indices = (item.index);
           angular.forEach(indices, function (index) {
-            alert($scope.answer);
             $scope.answer[parseInt(index)] = ch;
-            alert($scope.answer);
           })
         });
 
