@@ -10,7 +10,7 @@
 angular.module('clientApp')
   .controller('MainCtrl', function ($scope, $http) {
 
-    $scope.service_root = 'http://localhost:9099/hangman/api/';
+    $scope.service_root = 'http://maven.ai:9000/hangman/api/';
     $scope.status = "initial";
     $scope.game = "";
     $scope.answer = "";
